@@ -1,9 +1,14 @@
+  /**
+  * This program draws a sequences of objects using loop patterns
+  * @author: Aurora Chen
+  */
+
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 	
   public void settings() {
-    size(400, 400);
+    size(200, 200);
   }
 
   public void setup() {
@@ -40,6 +45,7 @@ public class Sketch extends PApplet {
     }
     
     // Quad 4
+    stroke(0);
     translate((float)(width * 0.75), (float)(height * 0.75));
     
     for(int petal = 0; petal < 8; petal ++){
