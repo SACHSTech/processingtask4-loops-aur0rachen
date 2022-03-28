@@ -25,9 +25,10 @@ public class Sketch extends PApplet {
   public void draw() {
 
     //lines 
+    stroke(0);
     line(width / 2, 0, width / 2, height);
     line(0, height / 2, width, height / 2);
-    
+  
     // Quad 1
     for (int lineX = width / 20; lineX < width / 2; lineX += width / 20){
       line(lineX, 0, lineX, height / 2);
@@ -46,12 +47,17 @@ public class Sketch extends PApplet {
     }
 
     // Quad 3
+    for(int i = 0; i < width / 2; i++){
+      int color = i * 255 / (width/2);
+      stroke(color);
+      line(i, height / 2, i, height);
+    }
+
     
+    // Quad 4
+    int flowerCircle = width / 12;
+    ellipse(300, 300, flowerCircle, flowerCircle);
 
 
-
-    
   }
-  
-  // define other methods down here.
 }
