@@ -2,29 +2,15 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 	
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
   public void settings() {
-	// put your size call here
     size(400, 400);
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
   public void setup() {
     background(255, 250, 253);
   }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
   public void draw() {
-
-    //lines 
     stroke(0);
     line(width / 2, 0, width / 2, height);
     line(0, height / 2, width, height / 2);
@@ -52,12 +38,16 @@ public class Sketch extends PApplet {
       stroke(color);
       line(i, height / 2, i, height);
     }
-
     
     // Quad 4
+    translate((float)(width * 0.75), (float)(height * 0.75));
+    
+    for(int petal = 0; petal < 8; petal ++){
+      rotate(PI / 4);
+      ellipse(width / 16, height / 80, width / 5, height / 20);
+    }
+    
     int flowerCircle = width / 12;
-    ellipse(300, 300, flowerCircle, flowerCircle);
-
-
+    ellipse(0, 0, flowerCircle, flowerCircle); 
   }
 }
