@@ -54,6 +54,6 @@ public class Sketch extends PApplet {
     }
     
     int flowerCircle = width / 12;
-    ellipse(0, 0, flowerCircle, flowerCircle); 
+    ellipse(0, 0, flowerCircle, flowerCircle);
   }
 }
