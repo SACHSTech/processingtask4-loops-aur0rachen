@@ -8,7 +8,7 @@ import processing.core.PApplet;
 public class Sketch extends PApplet {
 	
   public void settings() {
-    size(400, 400);
+    size(78, 78);
   }
 
   public void setup() {
@@ -16,7 +16,6 @@ public class Sketch extends PApplet {
   }
 
   public void draw() {
-    stroke(0);
     line(width / 2, 0, width / 2, height);
     line(0, height / 2, width, height / 2);
   
@@ -38,7 +37,7 @@ public class Sketch extends PApplet {
     }
 
     // Quad 3
-    for(int i = 0; i < width / 2 && i < width; i++){
+    for(int i = 0; i < width / 2; i++){
       int intColor = i * 255 / (width/2);
       stroke(intColor);
       line(i, height / 2, i, height);
