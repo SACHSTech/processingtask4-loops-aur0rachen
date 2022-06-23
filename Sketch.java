@@ -1,36 +1,62 @@
+  /**
+  * This program draws a sequences of objects using loop patterns
+  * @author: Aurora Chen
+  */
+
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 	
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
   public void settings() {
-	// put your size call here
-    size(400, 400);
+    size(78, 78);
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
   public void setup() {
-    background(210, 255, 173);
+    background(255, 250, 253);
   }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
   public void draw() {
-	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
-
-    stroke(255);
-    line(50, 125, 70, 50);  
-  }
+    line(width / 2, 0, width / 2, height);
+    line(0, height / 2, width, height / 2);
   
-  // define other methods down here.
+    // Quad 1
+    for (int intLineX = width / 20; intLineX < width / 2; intLineX += width / 20){
+      line(intLineX, 0, intLineX, height / 2);
+    }
+    for (int intLineY = height / 20; intLineY < height / 2; intLineY += height / 20){
+      line(0, intLineY, width / 2, intLineY);
+    } 
+    
+    // Quad 2 
+    int intCircleSize = width / 20;
+    fill(255, 0, 187);
+    for (int intCircleX = width / 2 + width / 20; intCircleX > width / 2 && intCircleX <= width; intCircleX += width / 10){
+      for (int intCircleY = height / 20; intCircleY < height / 2 && intCircleY <= height; intCircleY += height / 10){
+        ellipse(intCircleX, intCircleY, intCircleSize, intCircleSize);
+      }
+    }
+
+    // Quad 3
+    for(int i = 0; i < width / 2; i++){
+      int intColor = i * 255 / (width/2);
+      stroke(intColor);
+      line(i, height / 2, i, height);
+    }
+    
+    // Quad 4
+    stroke(0);
+    
+    translate((float)(width * 0.75), (float)(height * 0.75));
+
+    fill(255, 166, 0);
+    for(int intPetal = 0; intPetal < 8; intPetal ++){
+      rotate(PI / 4);
+      ellipse(width / 16, height / 80, width / 5, height / 20);
+    }
+
+    noStroke();
+    fill(118, 194, 109);
+    int intFlowerCircle = width / 12;
+    ellipse(0, 0, intFlowerCircle, intFlowerCircle);
+  }
 }
